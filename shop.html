@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Tuba Ahsan - Art & Digital Downloads</title>
+    <meta name="description" content="Shop original oil paintings, prints, and digital downloads by Tuba Ahsan.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --charcoal: #1a1a1a;
+            --gray: #4a4a4a;
+            --light-gray: #999;
+            --off-white: #f8f6f3;
+            --cream: #faf9f7;
+            --white: #fff;
+            --gold: #c9a962;
+            --sage: #8a9a7b;
+            --success: #27ae60;
+            --error: #e74c3c;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Raleway', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.6; }
+        h1,h2,h3,h4 { font-family: 'Playfair Display', serif; font-weight: 400; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; width: 100%; height: 70px;
+            background: rgba(250,249,247,0.98); backdrop-filter: blur(10px);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 4rem; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--charcoal); text-decoration: none; letter-spacing: 0.15em; }
+        .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+        .back-link { color: var(--gray); text-decoration: none; font-size: 0.8rem; }
+        .back-link:hover { color: var(--gold); }
+
+        /* CART BUTTON */
+        .cart-btn {
+            position: relative; display: flex; align-items: center; gap: 0.5rem;
+            padding: 0.6rem 1.2rem; background: var(--charcoal); color: var(--white);
+            border: none; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+            text-transform: uppercase; cursor: pointer; transition: background 0.3s;
+        }
+        .cart-btn:hover { background: var(--gold); }
+        .cart-btn svg { width: 18px; height: 18px; fill: currentColor; }
+        .cart-badge {
+            position: absolute; top: -6px; right: -6px;
+            background: var(--gold); color: var(--white);
+            font-size: 0.65rem; min-width: 18px; height: 18px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        }
+        .cart-badge:empty { display: none; }
+
+        /* HEADER */
+        .page-header {
+            padding: 140px 4rem 60px;
+            background: linear-gradient(135deg, var(--charcoal), var(--black));
+            text-align: center;
+        }
+        .page-header h1 { font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem; }
+        .page-header p { color: rgba(255,255,255,0.7); font-size: 1rem; }
+
+        /* CATEGORY NAV */
+        .cat-nav {
+            background: var(--white); border-bottom: 1px solid #e8e0d8;
+            padding: 1rem 2rem; position: sticky; top: 70px; z-index: 100;
+            display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+        }
+        .cat-nav a {
+            color: var(--gray); text-decoration: none; font-size: 0.75rem;
+            letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+        .cat-nav a:hover, .cat-nav a.active { color: var(--gold); border-color: var(--gold); }
+
+        /* SECTIONS */
+        .shop-section { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .section-header p { color: var(--light-gray); }
+        .divider { width: 50px; height: 2px; background: var(--gold); margin: 1rem auto; }
+
+        /* PRODUCT GRID */
+        .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+        .product {
+            background: var(--white); border: 1px solid #e8e0d8;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .product-img {
+            height: 250px; background: linear-gradient(135deg, var(--off-white), #e8e0d8);
+            display: flex; align-items: center; justify-content: center;
+            position: relative;
+        }
+        .product-img span { color: var(--light-gray); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        .badge {
+            position: absolute; top: 1rem; left: 1rem;
+            padding: 0.25rem 0.6rem; font-size: 0.6rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .badge-digital { background: var(--sage); color: var(--white); }
+        .badge-original { background: var(--gold); color: var(--white); }
+        .badge-print { background: var(--charcoal); color: var(--white); }
+        .product-info { padding: 1.5rem; }
+        .product-cat { font-size: 0.65rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+        .product-title { font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .product-desc { font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem; }
+        .product-price { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; }
+        .product-price .old { font-size: 0.9rem; color: var(--light-gray); text-decoration: line-through; margin-left: 0.5rem; font-weight: 400; }
+        .product-options { margin-bottom: 1rem; }
+        .product-options label { display: block; font-size: 0.7rem; color: var(--gray); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .product-options select {
+            width: 100%; padding: 0.6rem; border: 1px solid #e8e0d8;
+            font-family: inherit; font-size: 0.85rem; background: var(--white);
+        }
+        .btn {
+            width: 100%; padding: 0.9rem; border: none;
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+            text-transform: uppercase; cursor: pointer; transition: all 0.3s;
+        }
+        .btn-primary { background: var(--gold); color: var(--white); }
+        .btn-primary:hover { background: var(--charcoal); }
+        .btn-secondary { background: transparent; border: 1px solid var(--charcoal); color: var(--charcoal); margin-top: 0.5rem; }
+        .btn-secondary:hover { background: var(--charcoal); color: var(--white); }
+
+        /* TRUST BANNER */
+        .trust-banner {
+            background: var(--charcoal); padding: 3rem 2rem; text-align: center;
+        }
+        .trust-banner h3 { color: var(--gold); font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .trust-banner > p { color: rgba(255,255,255,0.7); margin-bottom: 2rem; }
+        .trust-items { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+        .trust-item { text-align: center; }
+        .trust-item svg { width: 36px; height: 36px; fill: var(--gold); margin-bottom: 0.5rem; }
+        .trust-item span { display: block; color: rgba(255,255,255,0.8); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        /* FOOTER */
+        footer {
+            background: var(--black); color: var(--light-gray);
+            padding: 2rem; text-align: center; font-size: 0.8rem;
+        }
+        footer a { color: var(--gold); text-decoration: none; }
+
+        /* CART SIDEBAR */
+        .overlay {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.5); z-index: 2000;
+        }
+        .overlay.open { display: block; }
+        .cart-sidebar {
+            position: fixed; top: 0; right: -420px; width: 420px; max-width: 100%;
+            height: 100%; background: var(--white); z-index: 2001;
+            display: flex; flex-direction: column; transition: right 0.3s;
+        }
+        .cart-sidebar.open { right: 0; }
+        .cart-head {
+            background: var(--charcoal); padding: 1.5rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .cart-head h3 { color: var(--gold); font-size: 1.1rem; }
+        .close-btn {
+            background: none; border: 1px solid var(--gold); color: var(--gold);
+            width: 32px; height: 32px; font-size: 1.2rem; cursor: pointer;
+        }
+        .close-btn:hover { background: var(--gold); color: var(--white); }
+        .cart-body { flex: 1; overflow-y: auto; padding: 1.5rem; }
+        .cart-empty { text-align: center; padding: 3rem 1rem; color: var(--light-gray); }
+        .cart-empty svg { width: 50px; height: 50px; fill: #ddd; margin-bottom: 1rem; }
+        .cart-item {
+            display: flex; gap: 1rem; padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        .cart-item-img {
+            width: 70px; height: 70px; background: var(--off-white);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.5rem; color: var(--light-gray);
+        }
+        .cart-item-info { flex: 1; }
+        .cart-item-name { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem; }
+        .cart-item-variant { font-size: 0.75rem; color: var(--light-gray); }
+        .cart-item-price { font-weight: 700; margin-top: 0.3rem; }
+        .cart-item-remove {
+            background: none; border: none; color: var(--light-gray);
+            font-size: 0.7rem; cursor: pointer; margin-top: 0.3rem;
+            text-transform: uppercase;
+        }
+        .cart-item-remove:hover { color: var(--error); }
+        .cart-foot {
+            padding: 1.5rem; border-top: 2px solid var(--charcoal); background: var(--off-white);
+        }
+        .cart-total {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 1rem;
+        }
+        .cart-total-label { font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .cart-total-amount { font-size: 1.5rem; font-weight: 700; }
+        .btn-checkout { width: 100%; }
+
+        /* CHECKOUT MODAL */
+        .modal {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.85); z-index: 3000;
+            align-items: center; justify-content: center; padding: 2rem;
+        }
+        .modal.open { display: flex; }
+        .modal-box {
+            background: var(--white); width: 100%; max-width: 550px;
+            max-height: 90vh; overflow-y: auto; position: relative;
+        }
+        .modal-head {
+            background: var(--charcoal); padding: 1.2rem 1.5rem;
+            position: sticky; top: 0; z-index: 1;
+        }
+        .modal-head h3 { color: var(--gold); font-size: 1.1rem; }
+        .modal-close {
+            position: absolute; top: 0.8rem; right: 1rem;
+            background: none; border: 1px solid var(--gold); color: var(--gold);
+            width: 30px; height: 30px; font-size: 1rem; cursor: pointer;
+        }
+        .modal-body { padding: 1.5rem; }
+        .order-summary { margin-bottom: 1.5rem; }
+        .order-item { display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 0.9rem; border-bottom: 1px solid #eee; }
+        .order-totals { background: var(--off-white); padding: 1rem; margin: 1rem 0; }
+        .order-row { display: flex; justify-content: space-between; padding: 0.3rem 0; }
+        .order-row.final { font-size: 1.2rem; font-weight: 700; border-top: 2px solid var(--charcoal); padding-top: 0.8rem; margin-top: 0.5rem; }
+        .form-section { margin-bottom: 1.5rem; }
+        .form-section h4 { font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee; }
+        .form-grid { display: grid; gap: 0.8rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+        .form-group label { display: block; font-size: 0.7rem; color: var(--gray); margin-bottom: 0.3rem; text-transform: uppercase; }
+        .form-group input, .form-group select {
+            width: 100%; padding: 0.7rem; border: 1px solid #ddd;
+            font-family: inherit; font-size: 0.9rem;
+        }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--gold); }
+        .form-group.error input, .form-group.error select { border-color: var(--error); }
+        .form-note { font-size: 0.75rem; color: var(--light-gray); text-align: center; margin: 1rem 0; }
+        .form-note a { color: var(--gold); }
+        #paypal-container { min-height: 45px; margin-top: 1rem; }
+
+        /* RESULT MODALS */
+        .result-box { text-align: center; padding: 2.5rem; }
+        .result-icon { width: 70px; height: 70px; border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; }
+        .result-icon.ok { background: var(--success); }
+        .result-icon.fail { background: var(--error); }
+        .result-icon svg { width: 35px; height: 35px; fill: var(--white); }
+        .result-box h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .result-box p { color: var(--gray); margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .order-id { font-family: monospace; font-size: 1rem; background: var(--off-white); padding: 0.5rem 1rem; display: inline-block; margin: 1rem 0; }
+        .result-box .btn { max-width: 250px; margin: 1rem auto 0; display: block; }
+
+        /* TOAST */
+        .toast {
+            position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(80px);
+            background: var(--charcoal); color: var(--white); padding: 0.8rem 1.5rem;
+            font-size: 0.85rem; z-index: 5000; opacity: 0; transition: all 0.3s;
+        }
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+        .toast.ok { background: var(--success); }
+        .toast.err { background: var(--error); }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav { padding: 0 1.5rem; }
+            .page-header { padding: 120px 1.5rem 40px; }
+            .page-header h1 { font-size: 2rem; }
+            .shop-section { padding: 3rem 1.5rem; }
+            .products { grid-template-columns: 1fr; }
+            .trust-items { gap: 1.5rem; }
+            .cart-sidebar { width: 100%; right: -100%; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="index.html" class="logo">TUBA AHSAN</a>
+        <div class="nav-right">
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <button class="cart-btn" id="openCartBtn">
+                <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0020 5H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                Cart
+                <span class="cart-badge" id="cartBadge"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="page-header">
+        <h1>Art Shop</h1>
+        <p>Original art, prints & digital downloads</p>
+    </header>
+
+    <!-- CATEGORY NAV -->
+    <div class="cat-nav">
+        <a href="#digital" class="active">Digital Downloads</a>
+        <a href="#originals">Original Paintings</a>
+        <a href="#prints">Fine Art Prints</a>
+        <a href="#fashion">Fashion Catalogues</a>
+    </div>
+
+    <!-- DIGITAL DOWNLOADS -->
+    <section class="shop-section" id="digital">
+        <div class="section-header">
+            <h2>Digital Art Downloads</h2>
+            <div class="divider"></div>
+            <p>Instant download after purchase</p>
+        </div>
+        <div class="products">
+            <div class="product">
+                <div class="product-img">
+                    <span>[Art Preview]</span>
+                    <span class="badge badge-digital">Digital</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-cat">Digital Collection</p>
+                    <h3 class="product-title">Women Through Civilizations</h3>
+                    <p class="product-desc">8 high-resolution artworks from the acclaimed series.</p>
+                    <p class="product-price">$49</p>
+                    <div class="product-options">
+                        <label>Format</label>
+                        <select id="dig1-opt">
+                            <option value="JPEG|0">JPEG (300 DPI)</option>
+                            <option value="JPEG+PNG|10">JPEG + PNG (+$10)</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" onclick="addItem('DIG001','Women Through Civilizations',49,'dig1-opt','digital')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-img">
+                    <span>[Art Preview]</span>
+                    <span class="badge badge-digital">Digital</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-cat">Single Artwork</p>
+                    <h3 class="product-title">Rising from the Ashes</h3>
+                    <p class="product-desc">High-resolution file symbolizing resilience.</p>
+                    <p class="product-price">$29</p>
+                    <button class="btn btn-primary" onclick="addItem('DIG002','Rising from the Ashes',29,null,'digital')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-img">
+                    <span>[Art Preview]</span>
+                    <span class="badge badge-digital">Digital</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-cat">Collection</p>
+                    <h3 class="product-title">Colors of Hope</h3>
+                    <p class="product-desc">5 artworks from earthquake relief series.</p>
+                    <p class="product-price">$39</p>
+                    <button class="btn btn-primary" onclick="addItem('DIG003','Colors of Hope',39,null,'digital')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORIGINAL PAINTINGS -->
+    <section class="shop-section" id="originals" style="background:var(--off-white);">
+        <div class="section-header">
+            <h2>Original Oil Paintings</h2>
+            <div class="divider"></div>
+            <p>One-of-a-kind masterpieces with certificate</p>
+        </div>
+        <div class="products">
+            <div class="product">
+                <div class="product-img">
+                    <span>[Original Art]</span>
+                    <span class="badge badge-original">Original</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-cat">Oil on Canvas</p>
+                    <h3 class="product-title">Anatolian Grace</h3>
+                    <p class="product-desc">80x100cm. From "Women Through Civilizations".</p>
+                    <p class="product-price">$3,500</p>
+                    <button class="btn btn-primary" onclick="addItem('ORI001','Anatolian Grace (80x100cm)',3500,null,'physical')">Add to Cart</button>
+                    <button class="btn btn-secondary" onclick="inquire('Anatolian Grace')">Inquire</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-img">
+                    <span>[Original Art]</span>
+                    <span class="badge badge-original">Original</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-cat">Oil on Canvas</p>
+                    <h3 class="product-title">Mediterranean Dreams</h3>
+                    <p class="product-desc">100x120cm. Turkish coastline. Framed.</p>
+                    <p class="product-price">$4,200</p>
+                    <button class="btn btn-primary" onclick="addItem('ORI002','Mediterranean Dreams (100x120cm)',4200,null,'physical')">Add to Cart</button>
+                    <button class="btn btn-secondary" onclick="inquire('Mediterranean Dreams')">Inquire</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-img">
+                    <span>[Commission]</span>
+                    <span class="badge badge-original">Custom</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-cat">Commission</p>
+                    <h3 class="product-title">Portrait Commission</h3>
+                    <p class="product-desc">Custom oil portrait to your specifications.</p>
+                    <p class="product-price">$2,500+</p>
+                    <button class="btn btn-secondary" onclick="inquire('Portrait Commission')">Request Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRINTS -->
+    <section class="shop-section" id="prints">
+        <div class="section-header">
+            <h2>Giclée Fine Art Prints</h2>
+            <div class="divider"></div>
+            <p>Museum-quality, signed & numbered</p>
+        </div>
+        <div class="products">
+            <div class="product">
+                <div class="product-img">
+                    <span>[Print Preview]</span>
+                    <span class="badge badge-print">Limited</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-cat">Edition of 50</p>
+                    <h3 class="product-title">Strength in Silence</h3>
+                    <p class="product-desc">Giclée on Hahnemühle paper.</p>
+                    <p class="product-price" id="prt1-price">$195</p>
+                    <div class="product-options">
+                        <label>Size</label>
+                        <select id="prt1-opt" onchange="updatePrice('prt1')">
+                            <option value="30x40cm|195">30×40cm - $195</option>
+                            <option value="50x70cm|295">50×70cm - $295</option>
+                            <option value="70x100cm|450">70×100cm - $450</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" onclick="addPrint('PRT001','Strength in Silence','prt1-opt')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-img">
+                    <span>[Print Preview]</span>
+                    <span class="badge badge-print">Limited</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-cat">Edition of 75</p>
+                    <h3 class="product-title">Istanbul Twilight</h3>
+                    <p class="product-desc">Giclée capturing Istanbul at dusk.</p>
+                    <p class="product-price" id="prt2-price">$175</p>
+                    <div class="product-options">
+                        <label>Size</label>
+                        <select id="prt2-opt" onchange="updatePrice('prt2')">
+                            <option value="30x40cm|175">30×40cm - $175</option>
+                            <option value="50x70cm|275">50×70cm - $275</option>
+                            <option value="70x100cm|395">70×100cm - $395</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" onclick="addPrint('PRT002','Istanbul Twilight','prt2-opt')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-img">
+                    <span>[Print Preview]</span>
+                    <span class="badge badge-print">Limited</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-cat">Edition of 100</p>
+                    <h3 class="product-title">Hope Rising</h3>
+                    <p class="product-desc">Bestseller from relief series.</p>
+                    <p class="product-price" id="prt3-price">$225</p>
+                    <div class="product-options">
+                        <label>Size</label>
+                        <select id="prt3-opt" onchange="updatePrice('prt3')">
+                            <option value="30x40cm|225">30×40cm - $225</option>
+                            <option value="50x70cm|325">50×70cm - $325</option>
+                            <option value="70x100cm|495">70×100cm - $495</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" onclick="addPrint('PRT003','Hope Rising','prt3-opt')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FASHION -->
+    <section class="shop-section" id="fashion" style="background:var(--off-white);">
+        <div class="section-header">
+            <h2>Fashion Catalogues</h2>
+            <div class="divider"></div>
+            <p>Digital lookbooks - instant download</p>
+        </div>
+        <div class="products">
+            <div class="product">
+                <div class="product-img">
+                    <span>[Catalogue]</span>
+                    <span class="badge badge-digital">Digital</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-cat">Lookbook</p>
+                    <h3 class="product-title">KAYRA 2024</h3>
+                    <p class="product-desc">48-page modest fashion collection.</p>
+                    <p class="product-price">$19</p>
+                    <button class="btn btn-primary" onclick="addItem('FAC001','KAYRA 2024 Lookbook',19,null,'digital')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-img">
+                    <span>[Portfolio]</span>
+                    <span class="badge badge-digital">Digital</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-cat">Portfolio</p>
+                    <h3 class="product-title">Couture Designs</h3>
+                    <p class="product-desc">60+ pages of celebrity designs.</p>
+                    <p class="product-price">$29</p>
+                    <button class="btn btn-primary" onclick="addItem('FAC002','Couture Designs Portfolio',29,null,'digital')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-img">
+                    <span>[Bundle]</span>
+                    <span class="badge badge-digital">Digital</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-cat">Bundle</p>
+                    <h3 class="product-title">Fashion Archive</h3>
+                    <p class="product-desc">All catalogues + extras. Save $20!</p>
+                    <p class="product-price">$49 <span class="old">$69</span></p>
+                    <button class="btn btn-primary" onclick="addItem('FAC003','Fashion Archive Bundle',49,null,'digital')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BANNER -->
+    <section class="trust-banner">
+        <h3>Shop with Confidence</h3>
+        <p>Secure payments • Instant digital delivery • Worldwide shipping</p>
+        <div class="trust-items">
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                <span>Secure Payment</span>
+            </div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>Authenticity Guaranteed</span>
+            </div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                <span>Instant Downloads</span>
+            </div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 17.93A8 8 0 014 12c0-.62.08-1.21.21-1.79L9 15v1a2 2 0 002 2v1.93zm6.9-2.54A2 2 0 0016 16h-1v-3a1 1 0 00-1-1H8v-2h2a1 1 0 001-1V7h2a2 2 0 002-2v-.41A8 8 0 0120 12c0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                <span>Worldwide Shipping</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Tuba Ahsan. All rights reserved. | <a href="index.html">Home</a> | <a href="privacy-policy.html">Privacy</a> | <a href="terms-of-use.html">Terms</a></p>
+    </footer>
+
+    <!-- CART SIDEBAR -->
+    <div class="overlay" id="overlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-head">
+            <h3>Your Cart</h3>
+            <button class="close-btn" id="closeCartBtn">&times;</button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <div class="cart-empty" id="cartEmpty">
+                <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42a.25.25 0 01-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0020 5H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-foot" id="cartFoot" style="display:none;">
+            <div class="cart-total">
+                <span class="cart-total-label">Total</span>
+                <span class="cart-total-amount">$<span id="cartTotalAmt">0</span></span>
+            </div>
+            <button class="btn btn-primary btn-checkout" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </aside>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-box">
+            <button class="modal-close" id="closeCheckout">&times;</button>
+            <div class="modal-head"><h3>Secure Checkout</h3></div>
+            <div class="modal-body">
+                <div class="order-summary" id="orderSummary"></div>
+                <div class="order-totals">
+                    <div class="order-row"><span>Subtotal</span><span>$<span id="orderSubtotal">0</span></span></div>
+                    <div class="order-row" id="shipRow" style="display:none;"><span>Shipping</span><span>Calculated separately</span></div>
+                    <div class="order-row final"><span>Total</span><span>$<span id="orderTotal">0</span> USD</span></div>
+                </div>
+                <div class="form-section">
+                    <h4>Your Information</h4>
+                    <div class="form-grid">
+                        <div class="form-row">
+                            <div class="form-group"><label>First Name *</label><input type="text" id="fName"></div>
+                            <div class="form-group"><label>Last Name *</label><input type="text" id="lName"></div>
+                        </div>
+                        <div class="form-group"><label>Email *</label><input type="email" id="email"></div>
+                    </div>
+                </div>
+                <div class="form-section" id="shipSection" style="display:none;">
+                    <h4>Shipping Address</h4>
+                    <div class="form-grid">
+                        <div class="form-group"><label>Phone</label><input type="tel" id="phone"></div>
+                        <div class="form-group"><label>Address *</label><input type="text" id="addr"></div>
+                        <div class="form-row">
+                            <div class="form-group"><label>City *</label><input type="text" id="city"></div>
+                            <div class="form-group"><label>State</label><input type="text" id="state"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Postal Code *</label><input type="text" id="zip"></div>
+                            <div class="form-group"><label>Country *</label>
+                                <select id="country">
+                                    <option value="">Select...</option>
+                                    <option value="US">United States</option>
+                                    <option value="TR">Turkey</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="FR">France</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="OTHER">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="form-note">By completing purchase, you agree to our <a href="terms-of-use.html">Terms</a> & <a href="privacy-policy.html">Privacy Policy</a>.</p>
+                <div id="paypal-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUCCESS MODAL -->
+    <div class="modal" id="successModal">
+        <div class="modal-box">
+            <div class="result-box">
+                <div class="result-icon ok"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                <h3>Thank You!</h3>
+                <p>Your order was placed successfully.</p>
+                <p>Order ID:</p>
+                <div class="order-id" id="orderId">TA-000000</div>
+                <p>Confirmation sent to your email.</p>
+                <p id="dlNote" style="display:none;color:var(--success);">Digital items will be emailed shortly.</p>
+                <button class="btn btn-primary" id="closeSuccess">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ERROR MODAL -->
+    <div class="modal" id="errorModal">
+        <div class="modal-box">
+            <div class="result-box">
+                <div class="result-icon fail"><svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></div>
+                <h3>Payment Failed</h3>
+                <p id="errMsg">There was an issue with your payment.</p>
+                <button class="btn btn-primary" id="closeError">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <!-- PAYPAL SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=BAA3bX1Y960JWGKIwL5eIY4ZE8xaJ3EK1NqtMQvRe-t50ncppbOi6gaJdMVEnMHe2672DY7aSBaDiNEQqg&currency=USD"></script>
+
+    <script>
+    // ============ STATE ============
+    let cart = [];
+
+    // ============ DOM ELEMENTS ============
+    const overlay = document.getElementById('overlay');
+    const cartSidebar = document.getElementById('cartSidebar');
+    const cartBody = document.getElementById('cartBody');
+    const cartEmpty = document.getElementById('cartEmpty');
+    const cartFoot = document.getElementById('cartFoot');
+    const cartBadge = document.getElementById('cartBadge');
+    const cartTotalAmt = document.getElementById('cartTotalAmt');
+    const checkoutModal = document.getElementById('checkoutModal');
+    const successModal = document.getElementById('successModal');
+    const errorModal = document.getElementById('errorModal');
+
+    // ============ UTILITIES ============
+    function toast(msg, type) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.className = 'toast ' + (type || '') + ' show';
+        setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    function genOrderId() {
+        return 'TA-' + Date.now().toString(36).toUpperCase().slice(-5) + Math.random().toString(36).slice(2,5).toUpperCase();
+    }
+
+    function hasPhysical() { return cart.some(i => i.type === 'physical'); }
+    function hasDigital() { return cart.some(i => i.type === 'digital'); }
+    function getTotal() { return cart.reduce((s, i) => s + i.price, 0); }
+
+    // ============ CART FUNCTIONS ============
+    function openCart() {
+        overlay.classList.add('open');
+        cartSidebar.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCart() {
+        overlay.classList.remove('open');
+        cartSidebar.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function renderCart() {
+        // Clear items
+        document.querySelectorAll('.cart-item').forEach(el => el.remove());
+        
+        cartBadge.textContent = cart.length || '';
+        
+        if (cart.length === 0) {
+            cartEmpty.style.display = 'block';
+            cartFoot.style.display = 'none';
+        } else {
+            cartEmpty.style.display = 'none';
+            cartFoot.style.display = 'block';
+            
+            cart.forEach((item, idx) => {
+                const div = document.createElement('div');
+                div.className = 'cart-item';
+                div.innerHTML = `
+                    <div class="cart-item-img">[Art]</div>
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}</div>
+                        ${item.variant ? '<div class="cart-item-variant">' + item.variant + '</div>' : ''}
+                        <div class="cart-item-price">$${item.price.toLocaleString()}</div>
+                        <button class="cart-item-remove" data-idx="${idx}">Remove</button>
+                    </div>
+                `;
+                cartBody.appendChild(div);
+            });
+            
+            cartTotalAmt.textContent = getTotal().toLocaleString();
+        }
+    }
+
+    function addItem(sku, name, basePrice, optId, type) {
+        let price = basePrice;
+        let variant = '';
+        
+        if (optId) {
+            const sel = document.getElementById(optId);
+            const parts = sel.value.split('|');
+            variant = parts[0];
+            price = basePrice + (parseInt(parts[1]) || 0);
+        }
+        
+        if (cart.find(i => i.sku === sku && i.variant === variant)) {
+            toast('Already in cart', 'err');
+            openCart();
+            return;
+        }
+        
+        cart.push({ sku, name, price, variant, type });
+        renderCart();
+        toast('Added to cart!', 'ok');
+        openCart();
+    }
+
+    function addPrint(sku, name, optId) {
+        const sel = document.getElementById(optId);
+        const parts = sel.value.split('|');
+        const size = parts[0];
+        const price = parseInt(parts[1]);
+        
+        if (cart.find(i => i.sku === sku && i.variant === size)) {
+            toast('Already in cart', 'err');
+            openCart();
+            return;
+        }
+        
+        cart.push({ sku, name: name + ' (' + size + ')', price, variant: size, type: 'physical' });
+        renderCart();
+        toast('Added to cart!', 'ok');
+        openCart();
+    }
+
+    function removeItem(idx) {
+        cart.splice(idx, 1);
+        renderCart();
+        toast('Removed', '');
+    }
+
+    function updatePrice(id) {
+        const sel = document.getElementById(id + '-opt');
+        const price = sel.value.split('|')[1];
+        document.getElementById(id + '-price').textContent = '$' + price;
+    }
+
+    // ============ CHECKOUT ============
+    function openCheckout() {
+        if (cart.length === 0) return;
+        closeCart();
+        
+        // Build summary
+        const summary = document.getElementById('orderSummary');
+        summary.innerHTML = cart.map(i => 
+            `<div class="order-item"><span>${i.name}</span><span>$${i.price.toLocaleString()}</span></div>`
+        ).join('');
+        
+        const total = getTotal();
+        document.getElementById('orderSubtotal').textContent = total.toLocaleString();
+        document.getElementById('orderTotal').textContent = total.toLocaleString();
+        
+        // Show/hide shipping
+        const physical = hasPhysical();
+        document.getElementById('shipSection').style.display = physical ? 'block' : 'none';
+        document.getElementById('shipRow').style.display = physical ? 'flex' : 'none';
+        
+        checkoutModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        
+        renderPayPal(total);
+    }
+
+    function closeCheckout() {
+        checkoutModal.classList.remove('open');
+        document.body.style.overflow = '';
+        document.getElementById('paypal-container').innerHTML = '';
+    }
+
+    function validate() {
+        const fields = ['fName', 'lName', 'email'];
+        if (hasPhysical()) fields.push('addr', 'city', 'zip', 'country');
+        
+        let valid = true;
+        fields.forEach(id => {
+            const el = document.getElementById(id);
+            const grp = el.closest('.form-group');
+            if (!el.value.trim()) {
+                grp.classList.add('error');
+                valid = false;
+            } else {
+                grp.classList.remove('error');
+            }
+        });
+        
+        const emailEl = document.getElementById('email');
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
+            emailEl.closest('.form-group').classList.add('error');
+            valid = false;
+        }
+        
+        if (!valid) toast('Please fill required fields', 'err');
+        return valid;
+    }
+
+    // ============ PAYPAL ============
+    function renderPayPal(total) {
+        const container = document.getElementById('paypal-container');
+        container.innerHTML = '';
+        
+        paypal.Buttons({
+            style: { shape: 'rect', color: 'gold', layout: 'vertical', label: 'paypal' },
+            
+            createOrder: function(data, actions) {
+                if (!validate()) return Promise.reject(new Error('Validation failed'));
+                
+                return actions.order.create({
+                    purchase_units: [{
+                        description: cart.map(i => i.name).join(', ').substring(0, 127),
+                        amount: { value: total.toString(), currency_code: 'USD' }
+                    }]
+                });
+            },
+            
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    handleSuccess(details);
+                });
+            },
+            
+            onCancel: function() {
+                toast('Payment cancelled', '');
+            },
+            
+            onError: function(err) {
+                console.error('PayPal Error:', err);
+                showError('Payment failed. Please try again.');
+            }
+        }).render('#paypal-container');
+    }
+
+    // ============ ORDER SUCCESS ============
+    function handleSuccess(details) {
+        const orderId = genOrderId();
+        const total = getTotal();
+        
+        // Build order data
+        const order = {
+            id: orderId,
+            date: new Date().toISOString(),
+            paypalId: details.id,
+            payerEmail: details.payer.email_address,
+            customer: {
+                name: document.getElementById('fName').value + ' ' + document.getElementById('lName').value,
+                email: document.getElementById('email').value
+            },
+            shipping: hasPhysical() ? {
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('addr').value,
+                city: document.getElementById('city').value,
+                state: document.getElementById('state').value,
+                zip: document.getElementById('zip').value,
+                country: document.getElementById('country').value
+            } : null,
+            items: cart,
+            total: total,
+            hasDigital: hasDigital(),
+            hasPhysical: hasPhysical()
+        };
+        
+        // Save to localStorage
+        try {
+            const orders = JSON.parse(localStorage.getItem('tuba_orders') || '[]');
+            orders.push(order);
+            localStorage.setItem('tuba_orders', JSON.stringify(orders));
+        } catch(e) { console.error(e); }
+        
+        // Log order (for server integration)
+        console.log('NEW ORDER:', JSON.stringify(order, null, 2));
+        
+        // Show success
+        closeCheckout();
+        document.getElementById('orderId').textContent = orderId;
+        document.getElementById('dlNote').style.display = hasDigital() ? 'block' : 'none';
+        successModal.classList.add('open');
+        
+        // Clear cart
+        cart = [];
+        renderCart();
+        clearForm();
+    }
+
+    function clearForm() {
+        ['fName','lName','email','phone','addr','city','state','zip','country'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.value = '';
+        });
+    }
+
+    function showError(msg) {
+        document.getElementById('errMsg').textContent = msg;
+        errorModal.classList.add('open');
+    }
+
+    // ============ INQUIRY ============
+    function inquire(piece) {
+        window.location.href = 'mailto:me@tubaahsan.com?subject=' + encodeURIComponent('Inquiry: ' + piece) + 
+            '&body=' + encodeURIComponent('Hello,\n\nI am interested in "' + piece + '".\n\nPlease provide details.\n\nThank you!');
+    }
+
+    // ============ EVENT LISTENERS ============
+    document.getElementById('openCartBtn').addEventListener('click', openCart);
+    document.getElementById('closeCartBtn').addEventListener('click', closeCart);
+    overlay.addEventListener('click', closeCart);
+    document.getElementById('checkoutBtn').addEventListener('click', openCheckout);
+    document.getElementById('closeCheckout').addEventListener('click', closeCheckout);
+    document.getElementById('closeSuccess').addEventListener('click', () => {
+        successModal.classList.remove('open');
+        document.body.style.overflow = '';
+    });
+    document.getElementById('closeError').addEventListener('click', () => {
+        errorModal.classList.remove('open');
+    });
+
+    // Remove item delegation
+    cartBody.addEventListener('click', function(e) {
+        if (e.target.classList.contains('cart-item-remove')) {
+            removeItem(parseInt(e.target.dataset.idx));
+        }
+    });
+
+    // Category nav
+    document.querySelectorAll('.cat-nav a').forEach(link => {
+        link.addEventListener('click', function() {
+            document.querySelectorAll('.cat-nav a').forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (successModal.classList.contains('open')) successModal.classList.remove('open');
+            else if (errorModal.classList.contains('open')) errorModal.classList.remove('open');
+            else if (checkoutModal.classList.contains('open')) closeCheckout();
+            else if (cartSidebar.classList.contains('open')) closeCart();
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Initialize
+    renderCart();
+    </script>
+</body>
+</html>

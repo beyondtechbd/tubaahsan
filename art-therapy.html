@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Therapy Programs | Tuba Ahsan - Visual Artist & Fashion Designer</title>
+    <meta name="description" content="Join Tuba Ahsan's art therapy programs and creative workshops. Healing through art for all ages and skill levels.">
+    <link rel="canonical" href="https://tubaahsan.com/art-therapy.html">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Raleway:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --charcoal: #1a1a1a;
+            --dark-gray: #2d2d2d;
+            --warm-gray: #4a4a4a;
+            --medium-gray: #7a7a7a;
+            --light-gray: #b5b5b5;
+            --off-white: #f8f6f3;
+            --cream: #faf9f7;
+            --white: #ffffff;
+            --gold: #c9a962;
+            --gold-light: #d4bc7d;
+            --sage: #8a9a7b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Raleway', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.8; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; }
+        
+        nav { position: fixed; top: 0; width: 100%; height: 70px; padding: 0 4rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(250, 249, 247, 0.98); backdrop-filter: blur(20px); box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--charcoal); text-decoration: none; letter-spacing: 0.2em; }
+        .logo:hover { color: var(--gold); }
+        .back-link { color: var(--gold); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .back-link:hover { text-decoration: underline; }
+        
+        .page-header { padding: 140px 4rem 60px; background: linear-gradient(135deg, var(--sage) 0%, #6b7a5f 100%); text-align: center; }
+        .page-header h1 { font-size: 2.5rem; color: var(--white); margin-bottom: 1rem; }
+        .page-header p { color: rgba(255,255,255,0.9); font-size: 1.1rem; font-family: 'Cormorant Garamond', serif; font-style: italic; max-width: 600px; margin: 0 auto; }
+        
+        .intro { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; text-align: center; }
+        .intro h2 { font-size: 1.8rem; color: var(--charcoal); margin-bottom: 1.5rem; }
+        .intro p { color: var(--warm-gray); font-size: 1rem; max-width: 700px; margin: 0 auto; }
+        
+        .programs { max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
+        .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        
+        .program-card { background: var(--white); border: 1px solid #e8e0d8; overflow: hidden; transition: all 0.3s; }
+        .program-card:hover { box-shadow: 0 15px 40px rgba(0,0,0,0.1); transform: translateY(-5px); }
+        
+        .program-header { background: var(--charcoal); padding: 1.5rem 2rem; position: relative; }
+        .program-status { position: absolute; top: 1rem; right: 1rem; padding: 0.3rem 0.8rem; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+        .status-open { background: var(--sage); color: var(--white); }
+        .status-full { background: #c17f59; color: var(--white); }
+        .status-upcoming { background: var(--gold); color: var(--white); }
+        .program-header h3 { font-size: 1.3rem; color: var(--gold); margin-bottom: 0.3rem; }
+        .program-type { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+        
+        .program-body { padding: 2rem; }
+        .program-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+        .meta-item { display: flex; align-items: flex-start; gap: 0.8rem; }
+        .meta-icon { width: 20px; height: 20px; fill: var(--gold); flex-shrink: 0; margin-top: 2px; }
+        .meta-content label { display: block; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--medium-gray); margin-bottom: 0.2rem; }
+        .meta-content span { font-size: 0.9rem; color: var(--charcoal); }
+        
+        .program-description { color: var(--warm-gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee; }
+        
+        .program-instructions { background: var(--off-white); padding: 1rem 1.2rem; margin-bottom: 1.5rem; border-radius: 4px; }
+        .program-instructions h4 { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; font-family: 'Raleway', sans-serif; }
+        .program-instructions p { font-size: 0.85rem; color: var(--warm-gray); margin: 0; }
+        
+        .program-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn { padding: 0.8rem 1.5rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background: var(--gold); color: var(--white); }
+        .btn-primary:hover { background: var(--gold-light); }
+        .btn-secondary { background: transparent; color: var(--charcoal); border: 1px solid var(--charcoal); }
+        .btn-secondary:hover { background: var(--charcoal); color: var(--white); }
+        .btn svg { width: 14px; height: 14px; fill: currentColor; }
+        
+        .contact-section { background: var(--charcoal); padding: 4rem 2rem; text-align: center; }
+        .contact-section h2 { font-size: 1.8rem; color: var(--gold); margin-bottom: 1rem; }
+        .contact-section p { color: rgba(255,255,255,0.7); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .contact-info { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+        .contact-item { color: var(--white); }
+        .contact-item label { display: block; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+        .contact-item a { color: var(--white); text-decoration: none; }
+        .contact-item a:hover { color: var(--gold); }
+        
+        /* EDITABLE NOTICE */
+        .edit-notice { background: #fff3cd; border: 1px dashed #ffc107; padding: 1rem 1.5rem; margin: 2rem auto; max-width: 900px; border-radius: 4px; }
+        .edit-notice h4 { color: #856404; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; font-family: 'Raleway', sans-serif; }
+        .edit-notice p { color: #856404; font-size: 0.85rem; margin: 0; }
+        
+        footer { background: var(--black); color: var(--light-gray); padding: 2rem 4rem; text-align: center; }
+        footer p { font-size: 0.8rem; }
+        footer a { color: var(--gold); text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            nav { padding: 0 1.5rem; }
+            .page-header { padding: 120px 1.5rem 40px; }
+            .page-header h1 { font-size: 1.8rem; }
+            .program-grid { grid-template-columns: 1fr; }
+            .program-meta { grid-template-columns: 1fr; }
+            .program-actions { flex-direction: column; }
+            .btn { justify-content: center; }
+            .contact-info { flex-direction: column; gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">TUBA AHSAN</a>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </nav>
+
+    <header class="page-header">
+        <h1>Art Therapy Programs</h1>
+        <p>"Art washes away from the soul the dust of everyday life." — Pablo Picasso</p>
+    </header>
+
+    <section class="intro">
+        <h2>Healing Through Creative Expression</h2>
+        <p>Join our transformative art therapy sessions designed to nurture creativity, promote emotional well-being, and build community. Open to all skill levels—no prior art experience required.</p>
+    </section>
+
+    <!-- EDIT NOTICE FOR ARTIST -->
+    <div class="edit-notice">
+        <h4>📝 How to Edit This Page</h4>
+        <p>To update program details, simply edit the HTML below. Each program card has clearly labeled sections for: Title, Date, Time, Location, Description, and Instructions. You can copy a card to add new programs or delete cards to remove them.</p>
+    </div>
+
+    <section class="programs">
+        <div class="program-grid">
+            
+            <!-- PROGRAM 1 - EDIT THIS CARD -->
+            <article class="program-card">
+                <div class="program-header">
+                    <span class="program-status status-open">Registration Open</span>
+                    <h3>Creative Healing Workshop</h3>
+                    <span class="program-type">In-Person Workshop</span>
+                </div>
+                <div class="program-body">
+                    <div class="program-meta">
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+                            <div class="meta-content">
+                                <label>Date</label>
+                                <span>Saturday, January 25, 2025</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            <div class="meta-content">
+                                <label>Time</label>
+                                <span>10:00 AM - 1:00 PM (GMT+3)</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <div class="meta-content">
+                                <label>Location</label>
+                                <span>Florya Art Studio, Istanbul</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                            <div class="meta-content">
+                                <label>Capacity</label>
+                                <span>12 participants</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="program-description">A 3-hour immersive workshop exploring oil painting techniques as a form of emotional expression. Learn to translate feelings into colors and brushstrokes while creating your own therapeutic artwork to take home.</p>
+                    <div class="program-instructions">
+                        <h4>What to Bring</h4>
+                        <p>All materials provided. Wear comfortable clothes you don't mind getting paint on. Light refreshments will be served.</p>
+                    </div>
+                    <div class="program-actions">
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Creative+Healing+Workshop+with+Tuba+Ahsan&dates=20250125T070000Z/20250125T100000Z&details=Art+therapy+workshop+at+Florya+Art+Studio,+Istanbul&location=Florya+Art+Studio,+Istanbul&sf=true" target="_blank" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                            Add to Calendar
+                        </a>
+                        <a href="https://maps.google.com/?q=Florya,+Istanbul,+Turkey" target="_blank" class="btn btn-secondary">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                            View Map
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROGRAM 2 - EDIT THIS CARD -->
+            <article class="program-card">
+                <div class="program-header">
+                    <span class="program-status status-open">Registration Open</span>
+                    <h3>Online Art Meditation</h3>
+                    <span class="program-type">Virtual Session (Zoom)</span>
+                </div>
+                <div class="program-body">
+                    <div class="program-meta">
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+                            <div class="meta-content">
+                                <label>Date</label>
+                                <span>Every Wednesday</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            <div class="meta-content">
+                                <label>Time</label>
+                                <span>7:00 PM - 8:30 PM (GMT+3)</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <div class="meta-content">
+                                <label>Location</label>
+                                <span>Online via Zoom</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                            <div class="meta-content">
+                                <label>Capacity</label>
+                                <span>20 participants</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="program-description">A weekly 90-minute online session combining guided meditation with simple art exercises. Perfect for beginners seeking stress relief and creative exploration from the comfort of home.</p>
+                    <div class="program-instructions">
+                        <h4>What You'll Need</h4>
+                        <p>Paper, pencils or any drawing materials you have. A quiet space with stable internet connection. Zoom link sent upon registration.</p>
+                    </div>
+                    <div class="program-actions">
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Online+Art+Meditation+with+Tuba+Ahsan&dates=20250115T160000Z/20250115T173000Z&details=Weekly+online+art+meditation+session+via+Zoom&recur=RRULE:FREQ=WEEKLY;BYDAY=WE&sf=true" target="_blank" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                            Add to Calendar
+                        </a>
+                        <a href="mailto:me@tubaahsan.com?subject=Registration: Online Art Meditation" class="btn btn-secondary">
+                            Register Now
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROGRAM 3 - EDIT THIS CARD -->
+            <article class="program-card">
+                <div class="program-header">
+                    <span class="program-status status-upcoming">Coming Soon</span>
+                    <h3>Children's Art Therapy</h3>
+                    <span class="program-type">In-Person Program</span>
+                </div>
+                <div class="program-body">
+                    <div class="program-meta">
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
+                            <div class="meta-content">
+                                <label>Date</label>
+                                <span>February 2025 (Dates TBA)</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            <div class="meta-content">
+                                <label>Time</label>
+                                <span>2:00 PM - 4:00 PM (GMT+3)</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <div class="meta-content">
+                                <label>Location</label>
+                                <span>Community Center, Istanbul</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <svg class="meta-icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                            <div class="meta-content">
+                                <label>Ages</label>
+                                <span>6-12 years old</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="program-description">A special 4-week program designed for children, focusing on emotional expression through colors, shapes, and storytelling. Part of our ongoing humanitarian initiative in partnership with local organizations.</p>
+                    <div class="program-instructions">
+                        <h4>Note for Parents</h4>
+                        <p>Free program for refugee and underprivileged children. Parents welcome to observe. All materials provided. Registration required.</p>
+                    </div>
+                    <div class="program-actions">
+                        <a href="mailto:me@tubaahsan.com?subject=Interest: Children's Art Therapy Program" class="btn btn-primary">
+                            Express Interest
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2>Questions or Special Requests?</h2>
+        <p>For private sessions, group bookings, or corporate wellness programs, please reach out directly.</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <label>Email</label>
+                <a href="mailto:me@tubaahsan.com">me@tubaahsan.com</a>
+            </div>
+            <div class="contact-item">
+                <label>Phone / WhatsApp</label>
+                <a href="tel:+905325517375">+90 532 551 7375</a>
+            </div>
+            <div class="contact-item">
+                <label>Instagram</label>
+                <a href="https://instagram.com/tubayucelahsan" target="_blank">@tubayucelahsan</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Tuba Ahsan. All Rights Reserved. | <a href="index.html">Home</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

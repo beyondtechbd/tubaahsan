@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Exhibitions | Tuba Ahsan - Visual Artist & Fashion Designer</title>
+    <meta name="description" content="Discover upcoming exhibitions featuring Tuba Ahsan's artwork. Find dates, locations, and details for gallery shows and art events worldwide.">
+    <link rel="canonical" href="https://tubaahsan.com/upcoming-exhibitions.html">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Raleway:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --charcoal: #1a1a1a;
+            --dark-gray: #2d2d2d;
+            --warm-gray: #4a4a4a;
+            --medium-gray: #7a7a7a;
+            --light-gray: #b5b5b5;
+            --off-white: #f8f6f3;
+            --cream: #faf9f7;
+            --white: #ffffff;
+            --gold: #c9a962;
+            --gold-light: #d4bc7d;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Raleway', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.8; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; }
+        
+        nav { position: fixed; top: 0; width: 100%; height: 70px; padding: 0 4rem; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(250, 249, 247, 0.98); backdrop-filter: blur(20px); box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--charcoal); text-decoration: none; letter-spacing: 0.2em; }
+        .logo:hover { color: var(--gold); }
+        .back-link { color: var(--gold); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .back-link:hover { text-decoration: underline; }
+        
+        .page-header { padding: 140px 4rem 60px; background: linear-gradient(135deg, var(--charcoal) 0%, var(--black) 100%); text-align: center; }
+        .page-header h1 { font-size: 2.5rem; color: var(--gold); margin-bottom: 1rem; }
+        .page-header p { color: rgba(255,255,255,0.7); font-size: 1rem; }
+        
+        .content { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+        
+        .exhibition-timeline { position: relative; }
+        .exhibition-timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), var(--gold-light), transparent); }
+        
+        .exhibition-item { position: relative; padding-left: 3rem; margin-bottom: 3rem; }
+        .exhibition-item::before { content: ''; position: absolute; left: -6px; top: 0; width: 14px; height: 14px; background: var(--gold); border-radius: 50%; border: 3px solid var(--cream); }
+        
+        .exhibition-date { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+        .exhibition-card { background: var(--white); border: 1px solid #e8e0d8; padding: 2rem; transition: all 0.3s; }
+        .exhibition-card:hover { box-shadow: 0 10px 40px rgba(0,0,0,0.1); transform: translateX(5px); }
+        .exhibition-card h3 { font-size: 1.5rem; color: var(--charcoal); margin-bottom: 0.5rem; }
+        .exhibition-venue { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--gold); margin-bottom: 1rem; }
+        .exhibition-details { display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 1rem; }
+        .detail-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--warm-gray); }
+        .detail-item svg { width: 16px; height: 16px; fill: var(--gold); }
+        .exhibition-description { color: var(--warm-gray); font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .exhibition-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+        
+        .btn { padding: 0.7rem 1.5rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background: var(--gold); color: var(--white); }
+        .btn-primary:hover { background: var(--gold-light); }
+        .btn-secondary { background: transparent; color: var(--charcoal); border: 1px solid var(--charcoal); }
+        .btn-secondary:hover { background: var(--charcoal); color: var(--white); }
+        
+        .status-badge { display: inline-block; padding: 0.3rem 0.8rem; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; margin-left: 1rem; vertical-align: middle; }
+        .status-confirmed { background: #8a9a7b; color: white; }
+        .status-tentative { background: #e6c87a; color: var(--charcoal); }
+        .status-invitation { background: #7a9ab5; color: white; }
+        
+        .no-exhibitions { text-align: center; padding: 4rem 2rem; background: var(--off-white); }
+        .no-exhibitions h3 { font-size: 1.5rem; color: var(--charcoal); margin-bottom: 1rem; }
+        .no-exhibitions p { color: var(--medium-gray); margin-bottom: 2rem; }
+        
+        .newsletter-signup { background: var(--charcoal); padding: 4rem 2rem; text-align: center; margin-top: 2rem; }
+        .newsletter-signup h2 { font-size: 1.8rem; color: var(--gold); margin-bottom: 1rem; }
+        .newsletter-signup p { color: rgba(255,255,255,0.7); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .newsletter-signup a { color: var(--gold); }
+        
+        .past-link { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e8e0d8; }
+        .past-link p { color: var(--medium-gray); font-size: 0.9rem; }
+        .past-link a { color: var(--gold); text-decoration: none; font-weight: 600; }
+        .past-link a:hover { text-decoration: underline; }
+        
+        footer { background: var(--black); color: var(--light-gray); padding: 2rem 4rem; text-align: center; }
+        footer p { font-size: 0.8rem; }
+        footer a { color: var(--gold); text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            nav { padding: 0 1.5rem; }
+            .page-header { padding: 120px 1.5rem 40px; }
+            .page-header h1 { font-size: 1.8rem; }
+            .content { padding: 2rem 1.5rem; }
+            .exhibition-item { padding-left: 2rem; }
+            .exhibition-card { padding: 1.5rem; }
+            .exhibition-details { flex-direction: column; gap: 0.8rem; }
+            .exhibition-actions { flex-direction: column; }
+            .btn { justify-content: center; }
+            .status-badge { display: block; margin: 0.5rem 0 0 0; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">TUBA AHSAN</a>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </nav>
+
+    <header class="page-header">
+        <h1>Upcoming Exhibitions</h1>
+        <p>Where to see Tuba Ahsan's artwork next</p>
+    </header>
+
+    <main class="content">
+        <div class="exhibition-timeline">
+            
+            <!-- EXHIBITION 1 -->
+            <article class="exhibition-item">
+                <p class="exhibition-date">March 2025</p>
+                <div class="exhibition-card">
+                    <h3>Bridges of Hope <span class="status-badge status-confirmed">Confirmed</span></h3>
+                    <p class="exhibition-venue">Cultural Center Gallery, Istanbul, Türkiye</p>
+                    <div class="exhibition-details">
+                        <div class="detail-item">
+                            <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                            <span>March 15 - April 5, 2025</span>
+                        </div>
+                        <div class="detail-item">
+                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            <span>Opening: March 15, 6:00 PM</span>
+                        </div>
+                        <div class="detail-item">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                            <span>Istanbul, Türkiye</span>
+                        </div>
+                    </div>
+                    <p class="exhibition-description">A solo exhibition featuring new works from the "Women Through Civilizations" series, exploring themes of cultural identity and feminine strength across different societies. The exhibition will showcase 12 new oil paintings created specifically for this show.</p>
+                    <div class="exhibition-actions">
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Bridges+of+Hope+Exhibition+Opening&dates=20250315T150000Z/20250315T200000Z&details=Solo+exhibition+by+Tuba+Ahsan&location=Cultural+Center+Gallery,+Istanbul&sf=true" target="_blank" class="btn btn-primary">Add to Calendar</a>
+                        <a href="mailto:me@tubaahsan.com?subject=RSVP: Bridges of Hope Exhibition Opening" class="btn btn-secondary">RSVP for Opening</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- EXHIBITION 2 -->
+            <article class="exhibition-item">
+                <p class="exhibition-date">May 2025</p>
+                <div class="exhibition-card">
+                    <h3>Art for Humanity <span class="status-badge status-tentative">Dates TBC</span></h3>
+                    <p class="exhibition-venue">International Art Fair, Dubai, UAE</p>
+                    <div class="exhibition-details">
+                        <div class="detail-item">
+                            <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                            <span>May 2025 (Exact dates TBC)</span>
+                        </div>
+                        <div class="detail-item">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                            <span>Dubai, United Arab Emirates</span>
+                        </div>
+                    </div>
+                    <p class="exhibition-description">Group exhibition in collaboration with Birlikte Sanat Society, continuing the mission of raising funds for humanitarian causes through art. Featuring works from international artists united by the theme of resilience and hope.</p>
+                    <div class="exhibition-actions">
+                        <a href="mailto:me@tubaahsan.com?subject=Interest: Art for Humanity Exhibition Dubai" class="btn btn-secondary">Express Interest</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- EXHIBITION 3 -->
+            <article class="exhibition-item">
+                <p class="exhibition-date">Summer 2025</p>
+                <div class="exhibition-card">
+                    <h3>Cultural Dialogues <span class="status-badge status-invitation">By Invitation</span></h3>
+                    <p class="exhibition-venue">Embassy Cultural Event, Washington D.C., USA</p>
+                    <div class="exhibition-details">
+                        <div class="detail-item">
+                            <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                            <span>Summer 2025 (Date TBA)</span>
+                        </div>
+                        <div class="detail-item">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                            <span>Washington D.C., USA</span>
+                        </div>
+                    </div>
+                    <p class="exhibition-description">A special diplomatic art exhibition showcasing Turkish contemporary art, organized in partnership with the Turkish Embassy. This invitation-only event celebrates cultural exchange and artistic dialogue between nations.</p>
+                    <div class="exhibition-actions">
+                        <a href="mailto:me@tubaahsan.com?subject=Inquiry: Cultural Dialogues Exhibition" class="btn btn-secondary">Request Information</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="past-link">
+            <p>Looking for past exhibitions? <a href="index.html#exhibitions">View Exhibition History →</a></p>
+        </div>
+    </main>
+
+    <section class="newsletter-signup">
+        <h2>Stay Updated</h2>
+        <p>Be the first to know about upcoming exhibitions, opening receptions, and exclusive events.</p>
+        <a href="index.html#contact" class="btn btn-primary">Subscribe to Newsletter</a>
+    </section>
+
+    <footer>
+        <p>© 2025 Tuba Ahsan. All Rights Reserved. | <a href="index.html">Home</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
