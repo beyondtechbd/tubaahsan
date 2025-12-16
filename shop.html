@@ -3,8 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop | Tuba Ahsan - Art & Digital Downloads</title>
-    <meta name="description" content="Shop original oil paintings, prints, and digital downloads by Tuba Ahsan.">
+    <title>Art Shop | Tuba Ahsan - Original Paintings, Prints & Digital Downloads</title>
+    <meta name="description" content="Shop original oil paintings, museum-quality giclée prints, and digital art downloads by Tuba Ahsan. Authentic artwork from Istanbul-based artist featuring Women Through Civilizations series. Secure PayPal checkout, worldwide shipping.">
+    <meta name="keywords" content="Tuba Ahsan art shop, buy original paintings, art prints, digital art downloads, Turkish artist artwork, oil paintings for sale, giclée prints, Women Through Civilizations art, Istanbul artist shop, contemporary art for sale">
+    <meta name="author" content="Tuba Ahsan">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://tubaahsan.com/shop.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tubaahsan.com/shop.html">
+    <meta property="og:title" content="Art Shop | Tuba Ahsan - Original Paintings & Prints">
+    <meta property="og:description" content="Shop authentic artwork by Tuba Ahsan. Original oil paintings, limited edition prints, and digital downloads. Secure checkout with worldwide shipping.">
+    <meta property="og:site_name" content="Tuba Ahsan Art Shop">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Art Shop | Tuba Ahsan">
+    <meta name="twitter:description" content="Original paintings, prints & digital art by Turkish artist Tuba Ahsan. Worldwide shipping available.">
+    
+    <!-- Security -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- Schema.org E-commerce Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "Tuba Ahsan Art Shop",
+        "description": "Official online shop for original artwork, prints, and digital downloads by Turkish visual artist Tuba Ahsan",
+        "url": "https://tubaahsan.com/shop.html",
+        "telephone": "+905325517375",
+        "email": "me@tubaahsan.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Istanbul",
+            "addressCountry": "TR"
+        },
+        "priceRange": "$19 - $4200",
+        "currenciesAccepted": "USD",
+        "paymentAccepted": "PayPal, Credit Card",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Tuba Ahsan Artwork",
+            "itemListElement": [
+                {"@type": "OfferCatalog", "name": "Digital Downloads", "description": "High-resolution digital art files"},
+                {"@type": "OfferCatalog", "name": "Original Paintings", "description": "One-of-a-kind oil paintings with certificate"},
+                {"@type": "OfferCatalog", "name": "Fine Art Prints", "description": "Museum-quality giclée prints"},
+                {"@type": "OfferCatalog", "name": "Fashion Catalogues", "description": "Digital fashion lookbooks"}
+            ]
+        }
+    }
+    </script>
+    
+    <!-- FAQ Schema for AEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What payment methods does Tuba Ahsan's art shop accept?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We accept PayPal and all major credit cards through secure PayPal checkout. All transactions are encrypted and secure."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How are digital art downloads delivered?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Digital downloads are delivered instantly via email after purchase. You'll receive high-resolution files in your chosen format."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do original paintings come with a certificate of authenticity?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, all original oil paintings include a signed certificate of authenticity from the artist, Tuba Ahsan."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does Tuba Ahsan ship artwork worldwide?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we ship original paintings and prints worldwide. Shipping costs are calculated based on destination. Digital downloads are available instantly worldwide."
+                }
+            }
+        ]
+    }
+    </script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -21,6 +117,7 @@
             --error: #e74c3c;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body { font-family: 'Raleway', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.6; }
         h1,h2,h3,h4 { font-family: 'Playfair Display', serif; font-weight: 400; }
 
@@ -71,9 +168,10 @@
         .cat-nav a {
             color: var(--gray); text-decoration: none; font-size: 0.75rem;
             letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 0;
-            border-bottom: 2px solid transparent;
+            border-bottom: 2px solid transparent; transition: all 0.3s; white-space: nowrap;
         }
-        .cat-nav a:hover, .cat-nav a.active { color: var(--gold); border-color: var(--gold); }
+        .cat-nav a:hover { color: var(--gold); }
+        .cat-nav a.active { color: var(--gold); border-color: var(--gold); font-weight: 600; }
 
         /* SECTIONS */
         .shop-section { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
@@ -92,9 +190,11 @@
         .product-img {
             height: 250px; background: linear-gradient(135deg, var(--off-white), #e8e0d8);
             display: flex; align-items: center; justify-content: center;
-            position: relative;
+            position: relative; overflow: hidden;
         }
-        .product-img span { color: var(--light-gray); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        .product-img img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
         .badge {
             position: absolute; top: 1rem; left: 1rem;
             padding: 0.25rem 0.6rem; font-size: 0.6rem; font-weight: 600;
@@ -110,10 +210,10 @@
         .product-price { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; }
         .product-price .old { font-size: 0.9rem; color: var(--light-gray); text-decoration: line-through; margin-left: 0.5rem; font-weight: 400; }
         .product-options { margin-bottom: 1rem; }
-        .product-options label { display: block; font-size: 0.7rem; color: var(--gray); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .product-options label { display: block; font-size: 0.7rem; color: var(--charcoal); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
         .product-options select {
             width: 100%; padding: 0.6rem; border: 1px solid #e8e0d8;
-            font-family: inherit; font-size: 0.85rem; background: var(--white);
+            font-family: inherit; font-size: 0.85rem; background: var(--white); color: var(--charcoal);
         }
         .btn {
             width: 100%; padding: 0.9rem; border: none;
@@ -174,8 +274,10 @@
         }
         .cart-item-img {
             width: 70px; height: 70px; background: var(--off-white);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 0.5rem; color: var(--light-gray);
+            flex-shrink: 0; overflow: hidden;
+        }
+        .cart-item-img img {
+            width: 100%; height: 100%; object-fit: cover;
         }
         .cart-item-info { flex: 1; }
         .cart-item-name { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem; }
@@ -212,13 +314,16 @@
         .modal-head {
             background: var(--charcoal); padding: 1.2rem 1.5rem;
             position: sticky; top: 0; z-index: 1;
+            display: flex; justify-content: space-between; align-items: center;
         }
-        .modal-head h3 { color: var(--gold); font-size: 1.1rem; }
+        .modal-head h3 { color: var(--gold); font-size: 1.1rem; margin: 0; }
         .modal-close {
-            position: absolute; top: 0.8rem; right: 1rem;
-            background: none; border: 1px solid var(--gold); color: var(--gold);
-            width: 30px; height: 30px; font-size: 1rem; cursor: pointer;
+            background: transparent; border: 2px solid var(--gold); color: var(--gold);
+            width: 36px; height: 36px; font-size: 1.5rem; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s; line-height: 1;
         }
+        .modal-close:hover { background: var(--gold); color: var(--white); }
         .modal-body { padding: 1.5rem; }
         .order-summary { margin-bottom: 1.5rem; }
         .order-item { display: flex; justify-content: space-between; padding: 0.5rem 0; font-size: 0.9rem; border-bottom: 1px solid #eee; }
@@ -229,16 +334,23 @@
         .form-section h4 { font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eee; }
         .form-grid { display: grid; gap: 0.8rem; }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
-        .form-group label { display: block; font-size: 0.7rem; color: var(--gray); margin-bottom: 0.3rem; text-transform: uppercase; }
+        .form-group label { display: block; font-size: 0.75rem; color: var(--charcoal); margin-bottom: 0.3rem; text-transform: uppercase; font-weight: 600; }
         .form-group input, .form-group select {
             width: 100%; padding: 0.7rem; border: 1px solid #ddd;
-            font-family: inherit; font-size: 0.9rem;
+            font-family: inherit; font-size: 0.9rem; color: var(--charcoal);
         }
         .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--gold); }
         .form-group.error input, .form-group.error select { border-color: var(--error); }
-        .form-note { font-size: 0.75rem; color: var(--light-gray); text-align: center; margin: 1rem 0; }
+        .form-note { font-size: 0.75rem; color: var(--gray); text-align: center; margin: 1rem 0; }
         .form-note a { color: var(--gold); }
         #paypal-container { min-height: 45px; margin-top: 1rem; }
+        .btn-cancel {
+            width: 100%; padding: 0.8rem; margin-top: 1rem;
+            background: transparent; border: 1px solid var(--gray); color: var(--gray);
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+            text-transform: uppercase; cursor: pointer; transition: all 0.3s;
+        }
+        .btn-cancel:hover { background: var(--gray); color: var(--white); }
 
         /* RESULT MODALS */
         .result-box { text-align: center; padding: 2.5rem; }
@@ -271,6 +383,12 @@
             .trust-items { gap: 1.5rem; }
             .cart-sidebar { width: 100%; right: -100%; }
             .form-row { grid-template-columns: 1fr; }
+            .cat-nav { gap: 1rem; padding: 0.8rem 1rem; overflow-x: auto; justify-content: flex-start; -webkit-overflow-scrolling: touch; }
+            .cat-nav a { font-size: 0.7rem; padding: 0.4rem 0; flex-shrink: 0; }
+        }
+        @media (max-width: 480px) {
+            .cat-nav { gap: 0.8rem; }
+            .cat-nav a { font-size: 0.65rem; letter-spacing: 0.05em; }
         }
     </style>
 </head>
@@ -312,7 +430,7 @@
         <div class="products">
             <div class="product">
                 <div class="product-img">
-                    <span>[Art Preview]</span>
+                    <img src="https://picsum.photos/seed/dig1/400/300" alt="Women Through Civilizations">
                     <span class="badge badge-digital">Digital</span>
                 </div>
                 <div class="product-info">
@@ -327,12 +445,12 @@
                             <option value="JPEG+PNG|10">JPEG + PNG (+$10)</option>
                         </select>
                     </div>
-                    <button class="btn btn-primary" onclick="addItem('DIG001','Women Through Civilizations',49,'dig1-opt','digital')">Add to Cart</button>
+                    <button class="btn btn-primary" onclick="addItem('DIG001','Women Through Civilizations',49,'dig1-opt','digital','https://picsum.photos/seed/dig1/400/300')">Add to Cart</button>
                 </div>
             </div>
             <div class="product">
                 <div class="product-img">
-                    <span>[Art Preview]</span>
+                    <img src="https://picsum.photos/seed/dig2/400/300" alt="Rising from the Ashes">
                     <span class="badge badge-digital">Digital</span>
                 </div>
                 <div class="product-info">
@@ -340,12 +458,12 @@
                     <h3 class="product-title">Rising from the Ashes</h3>
                     <p class="product-desc">High-resolution file symbolizing resilience.</p>
                     <p class="product-price">$29</p>
-                    <button class="btn btn-primary" onclick="addItem('DIG002','Rising from the Ashes',29,null,'digital')">Add to Cart</button>
+                    <button class="btn btn-primary" onclick="addItem('DIG002','Rising from the Ashes',29,null,'digital','https://picsum.photos/seed/dig2/400/300')">Add to Cart</button>
                 </div>
             </div>
             <div class="product">
                 <div class="product-img">
-                    <span>[Art Preview]</span>
+                    <img src="https://picsum.photos/seed/dig3/400/300" alt="Colors of Hope">
                     <span class="badge badge-digital">Digital</span>
                 </div>
                 <div class="product-info">
@@ -353,7 +471,7 @@
                     <h3 class="product-title">Colors of Hope</h3>
                     <p class="product-desc">5 artworks from earthquake relief series.</p>
                     <p class="product-price">$39</p>
-                    <button class="btn btn-primary" onclick="addItem('DIG003','Colors of Hope',39,null,'digital')">Add to Cart</button>
+                    <button class="btn btn-primary" onclick="addItem('DIG003','Colors of Hope',39,null,'digital','https://picsum.photos/seed/dig3/400/300')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -369,7 +487,7 @@
         <div class="products">
             <div class="product">
                 <div class="product-img">
-                    <span>[Original Art]</span>
+                    <img src="https://picsum.photos/seed/ori1/400/300" alt="Anatolian Grace">
                     <span class="badge badge-original">Original</span>
                 </div>
                 <div class="product-info">
@@ -377,13 +495,13 @@
                     <h3 class="product-title">Anatolian Grace</h3>
                     <p class="product-desc">80x100cm. From "Women Through Civilizations".</p>
                     <p class="product-price">$3,500</p>
-                    <button class="btn btn-primary" onclick="addItem('ORI001','Anatolian Grace (80x100cm)',3500,null,'physical')">Add to Cart</button>
+                    <button class="btn btn-primary" onclick="addItem('ORI001','Anatolian Grace (80x100cm)',3500,null,'physical','https://picsum.photos/seed/ori1/400/300')">Add to Cart</button>
                     <button class="btn btn-secondary" onclick="inquire('Anatolian Grace')">Inquire</button>
                 </div>
             </div>
             <div class="product">
                 <div class="product-img">
-                    <span>[Original Art]</span>
+                    <img src="https://picsum.photos/seed/ori2/400/300" alt="Mediterranean Dreams">
                     <span class="badge badge-original">Original</span>
                 </div>
                 <div class="product-info">
@@ -391,13 +509,13 @@
                     <h3 class="product-title">Mediterranean Dreams</h3>
                     <p class="product-desc">100x120cm. Turkish coastline. Framed.</p>
                     <p class="product-price">$4,200</p>
-                    <button class="btn btn-primary" onclick="addItem('ORI002','Mediterranean Dreams (100x120cm)',4200,null,'physical')">Add to Cart</button>
+                    <button class="btn btn-primary" onclick="addItem('ORI002','Mediterranean Dreams (100x120cm)',4200,null,'physical','https://picsum.photos/seed/ori2/400/300')">Add to Cart</button>
                     <button class="btn btn-secondary" onclick="inquire('Mediterranean Dreams')">Inquire</button>
                 </div>
             </div>
             <div class="product">
                 <div class="product-img">
-                    <span>[Commission]</span>
+                    <img src="https://picsum.photos/seed/ori3/400/300" alt="Portrait Commission">
                     <span class="badge badge-original">Custom</span>
                 </div>
                 <div class="product-info">
@@ -421,7 +539,7 @@
         <div class="products">
             <div class="product">
                 <div class="product-img">
-                    <span>[Print Preview]</span>
+                    <img src="https://picsum.photos/seed/prt1/400/300" alt="Strength in Silence">
                     <span class="badge badge-print">Limited</span>
                 </div>
                 <div class="product-info">
@@ -437,12 +555,12 @@
                             <option value="70x100cm|450">70×100cm - $450</option>
                         </select>
                     </div>
-                    <button class="btn btn-primary" onclick="addPrint('PRT001','Strength in Silence','prt1-opt')">Add to Cart</button>
+                    <button class="btn btn-primary" onclick="addPrint('PRT001','Strength in Silence','prt1-opt','https://picsum.photos/seed/prt1/400/300')">Add to Cart</button>
                 </div>
             </div>
             <div class="product">
                 <div class="product-img">
-                    <span>[Print Preview]</span>
+                    <img src="https://picsum.photos/seed/prt2/400/300" alt="Istanbul Twilight">
                     <span class="badge badge-print">Limited</span>
                 </div>
                 <div class="product-info">
@@ -458,12 +576,12 @@
                             <option value="70x100cm|395">70×100cm - $395</option>
                         </select>
                     </div>
-                    <button class="btn btn-primary" onclick="addPrint('PRT002','Istanbul Twilight','prt2-opt')">Add to Cart</button>
+                    <button class="btn btn-primary" onclick="addPrint('PRT002','Istanbul Twilight','prt2-opt','https://picsum.photos/seed/prt2/400/300')">Add to Cart</button>
                 </div>
             </div>
             <div class="product">
                 <div class="product-img">
-                    <span>[Print Preview]</span>
+                    <img src="https://picsum.photos/seed/prt3/400/300" alt="Hope Rising">
                     <span class="badge badge-print">Limited</span>
                 </div>
                 <div class="product-info">
@@ -479,7 +597,7 @@
                             <option value="70x100cm|495">70×100cm - $495</option>
                         </select>
                     </div>
-                    <button class="btn btn-primary" onclick="addPrint('PRT003','Hope Rising','prt3-opt')">Add to Cart</button>
+                    <button class="btn btn-primary" onclick="addPrint('PRT003','Hope Rising','prt3-opt','https://picsum.photos/seed/prt3/400/300')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -495,7 +613,7 @@
         <div class="products">
             <div class="product">
                 <div class="product-img">
-                    <span>[Catalogue]</span>
+                    <img src="https://picsum.photos/seed/fac1/400/300" alt="KAYRA 2024">
                     <span class="badge badge-digital">Digital</span>
                 </div>
                 <div class="product-info">
@@ -503,12 +621,12 @@
                     <h3 class="product-title">KAYRA 2024</h3>
                     <p class="product-desc">48-page modest fashion collection.</p>
                     <p class="product-price">$19</p>
-                    <button class="btn btn-primary" onclick="addItem('FAC001','KAYRA 2024 Lookbook',19,null,'digital')">Add to Cart</button>
+                    <button class="btn btn-primary" onclick="addItem('FAC001','KAYRA 2024 Lookbook',19,null,'digital','https://picsum.photos/seed/fac1/400/300')">Add to Cart</button>
                 </div>
             </div>
             <div class="product">
                 <div class="product-img">
-                    <span>[Portfolio]</span>
+                    <img src="https://picsum.photos/seed/fac2/400/300" alt="Couture Designs">
                     <span class="badge badge-digital">Digital</span>
                 </div>
                 <div class="product-info">
@@ -516,12 +634,12 @@
                     <h3 class="product-title">Couture Designs</h3>
                     <p class="product-desc">60+ pages of celebrity designs.</p>
                     <p class="product-price">$29</p>
-                    <button class="btn btn-primary" onclick="addItem('FAC002','Couture Designs Portfolio',29,null,'digital')">Add to Cart</button>
+                    <button class="btn btn-primary" onclick="addItem('FAC002','Couture Designs Portfolio',29,null,'digital','https://picsum.photos/seed/fac2/400/300')">Add to Cart</button>
                 </div>
             </div>
             <div class="product">
                 <div class="product-img">
-                    <span>[Bundle]</span>
+                    <img src="https://picsum.photos/seed/fac3/400/300" alt="Fashion Archive">
                     <span class="badge badge-digital">Digital</span>
                 </div>
                 <div class="product-info">
@@ -529,7 +647,7 @@
                     <h3 class="product-title">Fashion Archive</h3>
                     <p class="product-desc">All catalogues + extras. Save $20!</p>
                     <p class="product-price">$49 <span class="old">$69</span></p>
-                    <button class="btn btn-primary" onclick="addItem('FAC003','Fashion Archive Bundle',49,null,'digital')">Add to Cart</button>
+                    <button class="btn btn-primary" onclick="addItem('FAC003','Fashion Archive Bundle',49,null,'digital','https://picsum.photos/seed/fac3/400/300')">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -589,8 +707,10 @@
     <!-- CHECKOUT MODAL -->
     <div class="modal" id="checkoutModal">
         <div class="modal-box">
-            <button class="modal-close" id="closeCheckout">&times;</button>
-            <div class="modal-head"><h3>Secure Checkout</h3></div>
+            <div class="modal-head">
+                <h3>Secure Checkout</h3>
+                <button class="modal-close" id="closeCheckout">&times;</button>
+            </div>
             <div class="modal-body">
                 <div class="order-summary" id="orderSummary"></div>
                 <div class="order-totals">
@@ -637,6 +757,7 @@
                 </div>
                 <p class="form-note">By completing purchase, you agree to our <a href="terms-of-use.html">Terms</a> & <a href="privacy-policy.html">Privacy Policy</a>.</p>
                 <div id="paypal-container"></div>
+                <button class="btn btn-cancel" id="cancelCheckout">Cancel</button>
             </div>
         </div>
     </div>
@@ -672,8 +793,10 @@
     <!-- TOAST -->
     <div class="toast" id="toast"></div>
 
-    <!-- PAYPAL SDK -->
-    <script src="https://www.paypal.com/sdk/js?client-id=BAA3bX1Y960JWGKIwL5eIY4ZE8xaJ3EK1NqtMQvRe-t50ncppbOi6gaJdMVEnMHe2672DY7aSBaDiNEQqg&currency=USD"></script>
+    <!-- PAYPAL SDK - Replace YOUR_LIVE_CLIENT_ID with your actual PayPal Client ID from developer.paypal.com -->
+    <!-- For LIVE: Use client ID from Live mode (starts with AZ... or Ab...) -->
+    <!-- For TESTING: Use client ID from Sandbox mode (starts with AY...) -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AbY8K9b6jzZc6taZyYJNG27m7AXbKL3JfbKcZQarzqz5fFAao2LrCHCo1lyHJSvUzPagScg3mTd_6Tyf&currency=USD&intent=capture"></script>
 
     <script>
     // ============ STATE ============
@@ -706,6 +829,23 @@
     function hasPhysical() { return cart.some(i => i.type === 'physical'); }
     function hasDigital() { return cart.some(i => i.type === 'digital'); }
     function getTotal() { return cart.reduce((s, i) => s + i.price, 0); }
+    
+    // ============ SECURITY HELPERS ============
+    function sanitizeInput(str) {
+        if (!str) return '';
+        return str.toString()
+            .replace(/[<>]/g, '')
+            .replace(/javascript:/gi, '')
+            .replace(/on\w+=/gi, '')
+            .trim()
+            .substring(0, 500);
+    }
+    
+    function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
 
     // ============ CART FUNCTIONS ============
     function openCart() {
@@ -737,10 +877,12 @@
                 const div = document.createElement('div');
                 div.className = 'cart-item';
                 div.innerHTML = `
-                    <div class="cart-item-img">[Art]</div>
+                    <div class="cart-item-img">
+                        <img src="${escapeHtml(item.img || 'https://picsum.photos/seed/default/100/100')}" alt="${escapeHtml(item.name)}">
+                    </div>
                     <div class="cart-item-info">
-                        <div class="cart-item-name">${item.name}</div>
-                        ${item.variant ? '<div class="cart-item-variant">' + item.variant + '</div>' : ''}
+                        <div class="cart-item-name">${escapeHtml(item.name)}</div>
+                        ${item.variant ? '<div class="cart-item-variant">' + escapeHtml(item.variant) + '</div>' : ''}
                         <div class="cart-item-price">$${item.price.toLocaleString()}</div>
                         <button class="cart-item-remove" data-idx="${idx}">Remove</button>
                     </div>
@@ -752,7 +894,7 @@
         }
     }
 
-    function addItem(sku, name, basePrice, optId, type) {
+    function addItem(sku, name, basePrice, optId, type, img) {
         let price = basePrice;
         let variant = '';
         
@@ -769,13 +911,13 @@
             return;
         }
         
-        cart.push({ sku, name, price, variant, type });
+        cart.push({ sku, name, price, variant, type, img });
         renderCart();
         toast('Added to cart!', 'ok');
         openCart();
     }
 
-    function addPrint(sku, name, optId) {
+    function addPrint(sku, name, optId, img) {
         const sel = document.getElementById(optId);
         const parts = sel.value.split('|');
         const size = parts[0];
@@ -787,7 +929,7 @@
             return;
         }
         
-        cart.push({ sku, name: name + ' (' + size + ')', price, variant: size, type: 'physical' });
+        cart.push({ sku, name: name + ' (' + size + ')', price, variant: size, type: 'physical', img });
         renderCart();
         toast('Added to cart!', 'ok');
         openCart();
@@ -810,10 +952,10 @@
         if (cart.length === 0) return;
         closeCart();
         
-        // Build summary
+        // Build summary with escaped HTML for security
         const summary = document.getElementById('orderSummary');
         summary.innerHTML = cart.map(i => 
-            `<div class="order-item"><span>${i.name}</span><span>$${i.price.toLocaleString()}</span></div>`
+            `<div class="order-item"><span>${escapeHtml(i.name)}</span><span>$${i.price.toLocaleString()}</span></div>`
         ).join('');
         
         const total = getTotal();
@@ -845,6 +987,8 @@
         fields.forEach(id => {
             const el = document.getElementById(id);
             const grp = el.closest('.form-group');
+            // Sanitize input for security
+            el.value = sanitizeInput(el.value);
             if (!el.value.trim()) {
                 grp.classList.add('error');
                 valid = false;
@@ -868,6 +1012,13 @@
         const container = document.getElementById('paypal-container');
         container.innerHTML = '';
         
+        // Check if PayPal SDK loaded
+        if (typeof paypal === 'undefined') {
+            container.innerHTML = '<p style="color:var(--error);text-align:center;">PayPal failed to load. Please check your Client ID configuration.</p>';
+            console.error('PayPal SDK not loaded. Check your client-id in the script tag.');
+            return;
+        }
+        
         paypal.Buttons({
             style: { shape: 'rect', color: 'gold', layout: 'vertical', label: 'paypal' },
             
@@ -877,7 +1028,10 @@
                 return actions.order.create({
                     purchase_units: [{
                         description: cart.map(i => i.name).join(', ').substring(0, 127),
-                        amount: { value: total.toString(), currency_code: 'USD' }
+                        amount: { 
+                            value: total.toFixed(2),
+                            currency_code: 'USD' 
+                        }
                     }]
                 });
             },
@@ -885,18 +1039,31 @@
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(details) {
                     handleSuccess(details);
+                }).catch(function(err) {
+                    console.error('Capture Error:', err);
+                    showError('Payment capture failed: ' + (err.message || 'Unknown error'));
                 });
             },
             
-            onCancel: function() {
+            onCancel: function(data) {
+                console.log('Payment cancelled:', data);
                 toast('Payment cancelled', '');
             },
             
             onError: function(err) {
                 console.error('PayPal Error:', err);
-                showError('Payment failed. Please try again.');
+                let errorMsg = 'Payment failed. ';
+                if (err && err.message) {
+                    errorMsg += err.message;
+                } else {
+                    errorMsg += 'Please check your PayPal Client ID configuration.';
+                }
+                showError(errorMsg);
             }
-        }).render('#paypal-container');
+        }).render('#paypal-container').catch(function(err) {
+            console.error('PayPal Buttons render error:', err);
+            container.innerHTML = '<p style="color:var(--error);text-align:center;">PayPal buttons failed to render. Check console for details.</p>';
+        });
     }
 
     // ============ ORDER SUCCESS ============
@@ -974,6 +1141,13 @@
     overlay.addEventListener('click', closeCart);
     document.getElementById('checkoutBtn').addEventListener('click', openCheckout);
     document.getElementById('closeCheckout').addEventListener('click', closeCheckout);
+    document.getElementById('cancelCheckout').addEventListener('click', closeCheckout);
+    
+    // Click outside modal to close
+    document.getElementById('checkoutModal').addEventListener('click', function(e) {
+        if (e.target === this) closeCheckout();
+    });
+    
     document.getElementById('closeSuccess').addEventListener('click', () => {
         successModal.classList.remove('open');
         document.body.style.overflow = '';
@@ -989,13 +1163,46 @@
         }
     });
 
-    // Category nav
+    // Category nav - smooth scroll with offset
     document.querySelectorAll('.cat-nav a').forEach(link => {
-        link.addEventListener('click', function() {
-            document.querySelectorAll('.cat-nav a').forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                const navHeight = 70;
+                const catNavHeight = document.querySelector('.cat-nav').offsetHeight;
+                const targetPosition = targetSection.offsetTop - navHeight - catNavHeight + 10;
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            }
         });
     });
+
+    // Scroll-based section highlighting
+    const sections = document.querySelectorAll('.shop-section');
+    const catNavLinks = document.querySelectorAll('.cat-nav a');
+    
+    function highlightNavOnScroll() {
+        const scrollPosition = window.scrollY + 160;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                catNavLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightNavOnScroll);
+    highlightNavOnScroll();
 
     // Escape key
     document.addEventListener('keydown', function(e) {
